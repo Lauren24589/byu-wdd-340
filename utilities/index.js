@@ -59,6 +59,25 @@ Util.getNav = async function (req, res, next) {
   return list
 }
 
+function buildVehicleDetailView(data) {
+  const formatter = new Intl.NumberFormat("en-US");
+
+  return `
+    <section class="vehicle-detail">
+      <div class="vehicle-image">
+        <img src="${data.inv_image}" alt="Image of ${data.inv_make} ${data.inv_model}">
+      </div>
+      <div class="vehicle-info">
+        <h2>${data.inv_year} ${data.inv_make} ${data.inv_model}</h2>
+        <p><strong>Price:</strong> $${formatter.format(data.inv_price)}</p>
+        <p><strong>Mileage:</strong> ${formatter.format(data.inv_miles)} miles</p>
+        <p><strong>Color:</strong> ${data.inv_color}</p>
+        <p><strong>Description:</strong> ${data.inv_description}</p>
+      </div>
+    </section>
+  `;
+}
+
 
 /* ****************************************
  * Middleware For Handling Errors
@@ -67,6 +86,7 @@ Util.getNav = async function (req, res, next) {
  **************************************** */
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
+Util.buildVehicleDetailView = buildVehicleDetailView;
 
+module.exports = Util;
 
-module.exports = Util
