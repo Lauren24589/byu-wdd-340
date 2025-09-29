@@ -6,6 +6,17 @@
 }
 /******* Global Styles ***************/
 
+/* BEFORE */
+.section {
+  background-color: #eee;
+}
+
+/* AFTER */
+.section {
+  background-color: #eee;
+  color: #333;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -51,7 +62,6 @@ nav ul {
 }
 
 nav li {
-    background-color: var(--color-5);
     list-style: none;
     flex: 1 1 auto;
 }
@@ -84,18 +94,8 @@ main p {
   line-height: 1.6;
   margin-bottom: 20px;
 }
-main .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-}
-main .btn:hover {
-  background-color: #555;
-}
+
+
 #content {
   position: absolute;
   background-color: rgba(70, 130, 180, 0.5); /* 0.5 = 50% opacity */
