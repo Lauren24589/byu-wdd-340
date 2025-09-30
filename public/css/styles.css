@@ -195,10 +195,9 @@ main p {
 
 /********Vehicle Detail Page Styles ***************/
 .vehicle-detail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 } 
 .vehicle-detail img {
   max-width: 100%;
@@ -207,24 +206,7 @@ main p {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 20px;
 }
-.vehicle-detail h2 {
-  margin-bottom: 10px;
-}
-.vehicle-detail p {
-  margin: 5px 0;
-}
-.vehicle-detail .btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-}
-.vehicle-detail .btn:hover {
-  background-color: #555;
-}
+
 
 /******* Classification Page Styles ***************/
 .classification-list {
